@@ -6,10 +6,9 @@ class Toolbar extends Component {
     render() {
         return (
             <div className="toolbar">
-                <button className="btn-large">Test</button>
-                <button className="btn-large">Test</button>
-                <button className="btn-large">Test</button>
-                <button className="btn-large">Test</button>
+                {this.props.buttons.map(button => (
+                    <button className="btn-large" key={button.id} onClick={button.onClick}>{button.label}</button>
+                ))}
             </div>
         );
     }

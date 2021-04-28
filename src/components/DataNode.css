@@ -1,4 +1,5 @@
 .data-node {
+  display: inline-block;
   background-color: white;
   /* position: absolute; */
   margin: 10px;

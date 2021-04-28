@@ -1,6 +1,8 @@
 .ds-field {
-  background-color: aliceblue;
-  display: flex;
-  position: relative;
   width: 100%;
+}
+
+.ds-body {
+  background-color: aliceblue;
+  position: relative;
 }
