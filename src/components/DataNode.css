@@ -1,0 +1,24 @@
+.data-node {
+  background-color: white;
+  /* position: absolute; */
+  margin: 10px;
+  /* border-radius: 8px; */
+  border: 2px solid gray;
+  width: 120px;
+  text-align: center;
+}
+
+.data-node-data {
+  margin: 2px;
+  height: 25px;
+}
+
+.data-node-type {
+  letter-spacing: 2px;
+  color: orangered;
+  font-size: small;
+}
+
+.data-node-alt {
+  position: relative;
+}

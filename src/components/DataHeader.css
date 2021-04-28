@@ -1,0 +1,26 @@
+.header-base {
+  background-color: gray;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  margin: 10px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.header-base::after {
+  content: "";
+  position: absolute;
+  right: -19px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  border-left: 19px solid gray;
+}

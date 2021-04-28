@@ -1,0 +1,8 @@
+.conn-parent {
+  position: relative;
+  z-index: 1000;
+}
+
+.conn-parent svg {
+  position: absolute;
+}
