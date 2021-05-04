@@ -1,0 +1,38 @@
+:root {
+  --background-color: white;
+  --dot-color: black;
+
+  --dot-size: 1px;
+  --dot-space: 22px;
+}
+
+.sort-grid {
+  width: 100%;
+  height: 100%;
+}
+
+.sort-view {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(
+        90deg,
+        var(--background-color) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center,
+    linear-gradient(
+        var(--background-color) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center,
+    var(--dot-color);
+  background-size: var(--dot-space) var(--dot-space);
+  height: 80vh;
+  width: 100%;
+}
+
+.sort-customizer {
+  border-top: 2px solid rgb(219, 219, 219);
+  height: 100px;
+}
