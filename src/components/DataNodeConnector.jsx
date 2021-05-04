@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import './DataNodeConnector.css';
 
 class DataNodeConnector extends Component {
-    state = {
-        isLeft: this.props.isLeft
-    }
+
     render() {
+        const {connection} = this.props;
         let socketState = "socket ";
-        socketState += (this.state.isLeft === true) ? "left-socket" : "right-socket";
+        socketState += connection.direction + "-socket";
+        socketState += connection.isInput === true ? " input" : " output";
 
         return (
-            <div className="socket-holder">
-                <div className={socketState}>
-                    <p>connect</p>
-                </div>
-            </div>
+            <div className={socketState}/>
         );
     }
 }

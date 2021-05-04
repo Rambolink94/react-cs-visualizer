@@ -3,23 +3,24 @@ import DataHeader from "./DataHeader.jsx";
 import Toolbar from './Toolbar.jsx';
 import DataNode from "./DataNode.jsx";
 import "./DSField.css";
+import {directions} from './directions.js';
 
 class DSField extends Component {
 
     addNode = () => {
         const {nodes} = this.state;
-        this.state.nodes.push({id: nodes.length + 1, data: "new", type: "new"});
+        this.state.nodes.push({data: "new", type: "new", connections: [{isInput: false, direction: directions.right}]});
         this.setState({nodes: nodes});
     }
 
     state = {
         nodes: [
-            {id: 1, data: "hi", type: "string"},
-            {id: 2, data: 1, type: "int"},
-            {id: 3, data: "c", type: "char"}
+            {data: "hi", type: "string", connections: [{isInput: true, direction: directions.top}, {isInput: false, direction: directions.bottom}]},
+            {data: 1, type: "int", connections: [{isInput: false, direction: directions.right}]},
+            {data: "c", type: "char", connections: [{isInput: true, direction: directions.left}]}
         ],
         buttons: [
-            {id: 1, label: "New Node", onClick: this.addNode}
+            {label: "New Node", onClick: this.addNode}
         ]
     }
 
@@ -32,8 +33,8 @@ class DSField extends Component {
                     <div>
                         {this.props.structure.name}
                     </div>
-                    {this.state.nodes.map(node => (
-                        <DataNode key={node.id} node={node}/>
+                    {this.state.nodes.map((node, index) => (
+                        <DataNode key={index} node={node}/>
                     ))}
                 </div>
             </div>

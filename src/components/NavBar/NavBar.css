@@ -1,0 +1,26 @@
+.nav-bar {
+  width: 100%;
+}
+
+.links-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5px;
+}
+
+.link {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.link:hover {
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+
+.link a {
+  text-decoration: none;
+  color: orangered;
+  font-size: 1.2em;
+}

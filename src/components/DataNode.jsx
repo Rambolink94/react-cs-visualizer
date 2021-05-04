@@ -7,16 +7,15 @@ class DataNode extends Component {
         
       }
     render() {
+        const {node} = this.props;
         return (
             <div className="data-node">
-                <h2 className="data-node-data">{this.props.node.data}</h2>
-                <strong className="data-node-type">{this.props.node.type}</strong>
-                <hr/>
-                <div className="data-node-alt">
-                    {/*Other Components for next, prev, ect. */}
-                    <DataNodeConnector isLeft={true}/>
-                    <DataNodeConnector isLeft={false}/>
-                </div>
+                <h2 className="data-node-data">{node.data}</h2>
+                <strong className="data-node-type">{node.type}</strong>
+                {/*Other Components for next, prev, ect. */}
+                {node.connections.map((connection, index) => (
+                    <DataNodeConnector key={index} connection={connection}/>
+                ))}
             </div>
         );
     }

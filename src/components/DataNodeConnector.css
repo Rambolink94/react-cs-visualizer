@@ -1,43 +1,48 @@
+:root {
+  --connector-size: 10px;
+  --border-width: 2px;
+}
+
 .socket-holder {
   position: relative;
 }
 
 .socket {
-  display: flex;
-  align-items: center;
-  position: relative;
-  top: 0;
+  background: white;
+  position: absolute;
   width: 100%;
+  height: var(--connector-size);
+  width: var(--connector-size);
+  border: var(--border-width) solid orangered;
 }
 
-/* LEFT SOCKET */
 .left-socket {
-  text-align: left;
-  justify-content: flex-start;
-  left: 4px;
+  top: 50%;
+  left: calc((var(--connector-size) / 2 + var(--border-width)) * -1);
+  transform: translateY(-50%);
 }
 
-.left-socket::before {
-  content: "";
-  margin: 4px;
-  height: 6px;
-  width: 6px;
-  border: 2px solid orangered;
-  border-radius: 50%;
-}
-
-/* RIGHT SOCKET */
 .right-socket {
-  text-align: right;
-  justify-content: flex-end;
-  right: 0;
+  top: 50%;
+  right: calc((var(--connector-size) / 2 + var(--border-width)) * -1);
+  transform: translateY(-50%);
 }
 
-.right-socket::after {
-  content: "";
-  margin: 4px;
-  height: 6px;
-  width: 6px;
-  border: 2px solid orangered;
+.top-socket {
+  top: calc((var(--connector-size) / 2 + var(--border-width)) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-socket {
+  bottom: calc((var(--connector-size) / 2 + var(--border-width)) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input {
+}
+
+.output {
   border-radius: 50%;
 }

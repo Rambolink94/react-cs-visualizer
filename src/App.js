@@ -2,8 +2,9 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header.jsx';
 import DSField from './components/DSField.jsx';
-//import Connector from './components/Connector.jsx';
+/* import Connector from './components/Connector.jsx'; */
 import LinkedList from './data-structures/linkedList.js';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   let list = new LinkedList();
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <NavBar/>
       <Header/>
 
       <DSField structure={{ name: "linked list", struct: list}} />
